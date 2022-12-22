@@ -11,9 +11,11 @@ export class MessageService {
   ) {}
 
   save(message: string) {
-    console.log(message);
-    
-    return this.messageRepository.save({ message, shortUrl: `${new Date().getTime()}` });
+    //Utilisation de time stamps pour avoir des valeurs aléatoires courtes et uniques.
+    return this.messageRepository.save({
+      message,
+      shortUrl: `${new Date().getTime()}`,
+    });
   }
 
   findAll(): Promise<Message[]> {
@@ -21,6 +23,6 @@ export class MessageService {
   }
 
   findByUrl(url: string): Promise<Message> {
-    return this.messageRepository.findOne({ where: { shortUrl: url }});
+    return this.messageRepository.findOne({ where: { shortUrl: url } });
   }
 }

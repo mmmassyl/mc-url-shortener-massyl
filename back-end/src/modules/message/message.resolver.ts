@@ -13,7 +13,7 @@ export class MessageResolver {
 
   @Mutation((_returns) => MessageDto)
   message(@Args('message', { type: () => String }) message: string) {
-    console.log(message);
+    //console.log(message);
     return this.messageService.save(message);
   }
 }

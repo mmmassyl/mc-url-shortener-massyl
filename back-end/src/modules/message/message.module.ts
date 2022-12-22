@@ -8,6 +8,7 @@ import { SController } from './s.controller';
 @Module({
   imports: [TypeOrmModule.forFeature([Message])],
   providers: [MessageService, MessageResolver],
+  // ajout de controllers qui gèrent les requêtes HTTP et renvoient une réponse au client.
   controllers: [SController],
 })
 export class MessageModule {}
