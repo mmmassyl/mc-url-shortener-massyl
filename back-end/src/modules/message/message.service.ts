@@ -11,7 +11,9 @@ export class MessageService {
   ) {}
 
   save(message: string) {
-    return this.messageRepository.save({ message });
+    console.log(message);
+    
+    return this.messageRepository.save({ message, shortUrl: `${new Date().getTime()}` });
   }
 
   findAll(): Promise<Message[]> {

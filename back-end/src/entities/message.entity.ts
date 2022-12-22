@@ -7,4 +7,7 @@ export class Message {
 
   @Column()
   message: string;
+
+  @Column({ unique: true })
+  shortUrl: string;
 }

@@ -7,4 +7,7 @@ export class MessageDto {
 
   @Field()
   message: string;
+
+  @Field()
+  shortUrl: string;
 }
