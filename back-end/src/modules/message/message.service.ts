@@ -19,4 +19,8 @@ export class MessageService {
   findAll(): Promise<Message[]> {
     return this.messageRepository.find();
   }
+
+  findByUrl(url: string): Promise<Message> {
+    return this.messageRepository.findOne({ where: { shortUrl: url }});
+  }
 }

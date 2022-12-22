@@ -16,6 +16,7 @@ export type MessageDto = {
   __typename?: 'MessageDto';
   id?: Maybe<Scalars['Int']>;
   message: Scalars['String'];
+  shortUrl: Scalars['String'];
 };
 
 export type Mutation = {

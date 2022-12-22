@@ -6,14 +6,14 @@ const defaultOptions = {} as const;
 export type GetMessagesQueryVariables = Types.Exact<{ [key: string]: never; }>;
 
 
-export type GetMessagesQuery = { __typename?: 'Query', messages: Array<{ __typename?: 'MessageDto', id?: number | null, message: string }> };
+export type GetMessagesQuery = { __typename?: 'Query', messages: Array<{ __typename?: 'MessageDto', id?: number | null, message: string, shortUrl: string }> };
 
 export type AddMessageMutationVariables = Types.Exact<{
   message: Types.Scalars['String'];
 }>;
 
 
-export type AddMessageMutation = { __typename?: 'Mutation', message: { __typename?: 'MessageDto', id?: number | null, message: string } };
+export type AddMessageMutation = { __typename?: 'Mutation', message: { __typename?: 'MessageDto', id?: number | null, message: string, shortUrl: string } };
 
 
 export const GetMessagesDocument = gql`
@@ -21,6 +21,7 @@ export const GetMessagesDocument = gql`
   messages {
     id
     message
+    shortUrl
   }
 }
     `;
@@ -40,6 +41,7 @@ export const AddMessageDocument = gql`
   message(message: $message) {
     id
     message
+    shortUrl
   }
 }
     `;

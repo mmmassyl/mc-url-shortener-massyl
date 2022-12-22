@@ -2,6 +2,7 @@ query getMessages{
     messages {
         id
         message
+        shortUrl
     }
 }
 
@@ -9,5 +10,6 @@ mutation addMessage($message: String!) {
     message(message: $message) {
         id
         message
+        shortUrl
     }
 }

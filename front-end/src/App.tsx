@@ -42,7 +42,10 @@ function App() {
             Add a few messages to ensure that everything is working correctly :
           </div>
           {data?.messages.map((message) => (
-            <div key={message.id}>{message.message}</div>
+            <div key={message.id}>
+              http://localhost:4000/s/
+              {message.shortUrl}
+            </div>
           ))}
           <div className="font-semibold">
             <form
