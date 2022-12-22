@@ -39,7 +39,7 @@ function App() {
           <div
             className="font-semibold text-xl"
           >
-            Add a few messages to ensure that everything is working correctly :
+            Try a URL to ensure that everything is working correctly :
           </div>
           {data?.messages.map((message) => (
             <div key={message.id}>
